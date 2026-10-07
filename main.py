@@ -1,5 +1,5 @@
 from fastapi import APIRouter, FastAPI
-from .api import create, update, read, delete
+from api import create, update, read, delete
 
 
 app = FastAPI()

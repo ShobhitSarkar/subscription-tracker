@@ -1,4 +1,7 @@
-from pydantic import BaseModel, Enum
+import uuid
+from pydantic import BaseModel
+from enum import Enum
+
 
 class Subscription(BaseModel): 
     """
@@ -23,5 +26,5 @@ class DatabaseRecord(BaseModel):
     shape of the object that we write to the db
     """
 
-    id: int 
-    Subscription
+    id: uuid.UUID
+    subscription: Subscription
