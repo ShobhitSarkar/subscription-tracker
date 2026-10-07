@@ -2,7 +2,7 @@ from pydantic import BaseModel, Enum
 
 class Subscription(BaseModel): 
     """
-    shape of the notifications object 
+    shape of the notifications object (outwards facing)
     """
     name: str
     frequency: FrequenciesEnum
@@ -17,4 +17,11 @@ class FrequenciesEnum(str, Enum):
     w = "weekly"
     m = "monthly"
     y = "yearly"
-    
+
+class DatabaseRecord(BaseModel): 
+    """
+    shape of the object that we write to the db
+    """
+
+    id: int 
+    Subscription
